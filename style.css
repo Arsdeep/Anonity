@@ -20,7 +20,6 @@
 }
 
 #MainTitle {
-    background-color: transparent;
     font-family: "Future";
     background: rgb(16, 231, 154);
     background: -moz-linear-gradient(
@@ -39,6 +38,9 @@
         rgba(33, 215, 11, 1) 100%
     );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#10e79a",endColorstr="#21d70b",GradientType=1);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 .LeftSideBar {
@@ -158,10 +160,11 @@
     height: 2rem;
     width: 2rem;
     background-color: inherit;
+    transition: all 0.1s ease;
 }
 .Plus:hover {
     translate: 0rem -0.05rem;
-    transition: all 0.5s ease;
+    transition: all 0.1s ease;
 }
 
 .Emoji {
@@ -171,12 +174,12 @@
     height: 2rem;
     width: 2rem;
     background-color: inherit;
-    transition: all 0.5s ease;
+    transition: all 0.1s ease;
 }
 .Emoji:hover {
     background-image: url("Imgs/happy.png");
-    translate: 0rem -0.1rem;
-    transition: all 0.5s ease;
+    translate: 0rem -0.05rem;
+    transition: all 0.1s ease;
 }
 
 .Send {
@@ -186,8 +189,9 @@
     height: 2rem;
     width: 2rem;
     background-color: inherit;
+    transition: all 0.1s ease;
 }
 .Send:hover {
     translate: 0.1rem -0.1rem;
-    transition: all 0.5s ease;
+    transition: all 0.1s ease;
 }
