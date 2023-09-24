@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     background-color: red;
@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-.LeftSideBar{
+.LeftSideBar {
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -16,18 +16,18 @@
     color: white;
 }
 
-.LSBContent{
+.LSBContent {
     color: white;
     width: 20vw;
     height: 10vh;
     padding: 1rem;
 }
 
-.Main{
+.Main {
     display: flex;
 }
 
-.TextBox{
+.TextBox {
     display: flex;
     background-color: rgb(10, 15, 40);
     width: 80vw;
@@ -38,18 +38,18 @@
     justify-content: center;
 }
 
-.TBHeader{
+.TBHeader {
     box-sizing: border-box;
     width: 80vw;
     height: 10vh;
     background-color: black;
     align-items: center;
     display: flex;
-    padding: .5rem;
-    border-bottom: .1rem solid white;
+    padding: 0.5rem;
+    border-bottom: 0.1rem solid white;
 }
 
-.MessageContainer{
+.MessageContainer {
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -58,7 +58,7 @@
     align-items: flex-start;
 }
 
-.Message{
+.Message {
     display: flex;
     background-color: blue;
     width: 80vw;
@@ -71,7 +71,7 @@
     position: fixed;
 }
 
-.MInput{
+.MInput {
     background-color: wheat;
     width: 60vw;
     height: 2rem;
@@ -80,18 +80,18 @@
     font-size: 1rem;
 }
 
-.MInput:focus{ 
+.MInput:focus {
     outline: none;
 }
 
-.image{
+.image {
     background-color: white;
     border-radius: 50%;
     height: 3rem;
     width: 3rem;
 }
 
-.Plus{
+.Plus {
     background-image: url("Imgs/plus.png");
     background-position: center;
     background-size: contain;
@@ -100,7 +100,7 @@
     background-color: inherit;
 }
 
-.Emoji{
+.Emoji {
     background-image: url("Imgs/emoji.png");
     background-position: center;
     background-size: contain;
@@ -109,7 +109,7 @@
     background-color: inherit;
 }
 
-.Send{
+.Send {
     background-image: url("Imgs/send.png");
     background-position: center;
     background-size: cover;
