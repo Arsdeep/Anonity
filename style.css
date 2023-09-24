@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* background-color: rgb(10, 15, 20); */
+    /* border: 1PX solid white; */
+    box-sizing: border-box;
+}
+
+.LeftSideBar{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 20vw;
+    background-color: rgb(10, 15, 30);
+    color: white;
+}
+
+.LSBContent{
+    color: white;
+    width: 20vw;
+    height: 10vh;
+    padding: 1rem;
+}
+
+.Main{
+    display: flex;
+}
+
+.TextBox{
+    display: flex;
+    background-color: rgb(10, 15, 40);
+    width: 80vw;
+    height: 100vh;
+    color: white;
+    flex-wrap: wrap;
+    row-gap: 29rem;
+    justify-content: center;
+}
+
+.TBHeader{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 10vh;
+    background-color: black;
+    align-items: center;
+    display: flex;
+    padding: .5rem;
+    border-bottom: .1rem solid white;
+}
+
+.Message{
+    display: flex;
+    background-color: blue;
+    width: 80vw;
+    padding: 1rem;
+    font-size: 1rem;
+    column-gap: 1rem;
+    align-items: center;
+}
+
+.MInput{
+    background-color: wheat;
+    width: 60vw;
+    height: 3rem;
+    border-radius: 3rem;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.MInput:focus{ 
+    outline: none;
+}
+
+.image{
+    background-color: white;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+}
+
+.Plus{
+    background-image: url("Imgs/plus.png");
+    background-position: center;
+    background-size: contain;
+    height: 30px;
+    width: 30px;
+}
+
+.Emoji{
+    background-image: url("Imgs/happy.png");
+    background-position: center;
+    background-size: contain;
+    height: 30px;
+    width: 30px;
+}
