@@ -8,16 +8,16 @@
 
 .LeftSideBar {
     display: flex;
-    text-align: center;
     flex-direction: column;
     height: 100vh;
     width: 20vw;
-    background-color: rgb(10, 15, 30);
+    background-color: rgb(10, 10, 15);
     color: white;
 }
 
 .LSBContent {
     color: white;
+    background-color: rgb(10, 10, 37);
     width: 20vw;
     height: 10vh;
     padding: 1rem;
@@ -32,7 +32,7 @@
 
 .TextBox {
     display: flex;
-    background-color: rgb(10, 15, 40);
+    background-color: rgb(10, 10, 20);
     width: 80vw;
     height: 100vh;
     color: white;
@@ -45,7 +45,7 @@
     box-sizing: border-box;
     width: 80vw;
     height: 10vh;
-    background-color: black;
+    background-color: rgb(5, 10, 45);
     align-items: center;
     display: flex;
     padding: 0.5rem;
@@ -54,14 +54,13 @@
 
 .MessageContainer {
     display: flex;
-    flex-direction: column;
     width: 100vw;
     flex-direction: row;
 }
 
 .Message {
     display: flex;
-    background-color: blue;
+    background-color: rgb(6, 26, 83);
     width: 80vw;
     height: 10vh;
     padding: 1rem;
