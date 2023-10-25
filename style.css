@@ -19,6 +19,10 @@
     font-family: "Poppins";
 }
 
+body {
+    position: fixed;
+}
+
 #MainTitle {
     font-family: "Future";
     background: rgb(16, 231, 154);
@@ -109,17 +113,18 @@
 }
 
 .MyMsg {
-    padding: 0.5rem 0.7rem;
+    padding: 0.5rem 1rem;
     color: black;
     border-radius: 20px;
     background-color: lime;
     max-width: 40%;
     align-self: last baseline;
     animation: slideRtL 0.5s ease-out;
+    word-break: break-all;
 }
 
 .OtherMsg {
-    padding: 0.7rem;
+    padding: 0.5rem 1rem;
     color: black;
     border-radius: 20px;
     background-color: rgb(0, 183, 255);
@@ -156,13 +161,13 @@
 .MessageContainer {
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 0.5rem;
     overflow-x: hidden;
     overflow-y: scroll;
     width: 80vw;
     height: 80vh;
     background-color: rgb(1, 2, 10);
-    padding: 0.5rem;
+    padding: 1rem 1rem;
     font-size: 1rem;
     /* background-image: url("Wallpaper.png"); */
 }
@@ -240,6 +245,30 @@
     transition: all 0.1s ease;
 }
 
+#EmojiBox {
+    background-color: gray;
+    width: 20rem;
+    position: relative;
+    flex-wrap: wrap;
+    max-height: 20rem;
+    bottom: 21rem;
+    right: 2rem;
+    row-gap: 1rem;
+    overflow: scroll;
+    border-radius: 20px;
+    column-gap: 1rem;
+    padding: 1rem;
+    scrollbar-width: none;
+    display: none;
+}
+
+.Emoji h1 {
+    background-color: gray;
+}
+
+.Emoji h1::selection {
+    background-color: transparent;
+}
 @keyframes slideRtL {
     from {
         transform: translateX(100%);
