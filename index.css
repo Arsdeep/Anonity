@@ -1,0 +1,101 @@
+@font-face {
+    font-family: "Future";
+    src: url("Fonts/FutureF.woff2") format("woff2"),
+        /* Super Modern Browsers */ url("Fonts/FutureF.woff") format("woff"),
+        /* Pretty Modern Browsers */ url("Fonts/FutureF.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Fonts/Poppins-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+body {
+    font-family: "Poppins";
+    background-color: rgb(27, 27, 31);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#MainTitle {
+    display: inline;
+    font-family: "Future";
+    font-size: 60px;
+    background: rgb(16, 231, 154);
+    background: -moz-linear-gradient(
+        90deg,
+        rgba(16, 231, 154, 1) 0%,
+        rgba(33, 215, 11, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+        90deg,
+        rgba(16, 231, 154, 1) 0%,
+        rgba(33, 215, 11, 1) 100%
+    );
+    background: linear-gradient(
+        90deg,
+        rgba(16, 231, 154, 1) 0%,
+        rgba(33, 215, 11, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#10e79a",endColorstr="#21d70b",GradientType=1);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+    align-self: center;
+    margin: 0;
+}
+
+.login-container {
+    display: grid;
+    background-color: rgb(10, 10, 10);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 400px;
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.login-container h2 {
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group button {
+    background-color: #20ce25;  
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
