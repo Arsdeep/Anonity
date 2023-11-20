@@ -17,6 +17,9 @@ const addCol = document.getElementById("add");
 const friendCol = document.getElementById("friends");
 const msgCol = document.getElementById("msg");
 
+const LSBContentTitle = document.getElementById("LSBContentTitle");
+
+var OTHERNAME = "";
 
 // EMOJIS \\
 for (let i = 0; i < emoji_list.length; i++) { // Add Emoji from list above
@@ -41,17 +44,90 @@ function LoadChats(thisdiv) {
     TBHName.textContent = thisdiv.textContent;
     ProfileImg.style.display = "block";                 // Implement PFP here
     
+    OTHERNAME = thisdiv.textContent;
+
+
+    // let xhr = new XMLHttpRequest();
+    // xhr.open("POST","backend/msg.php",true);
+    // xhr.onload = () =>{
+    //     if(xhr.readyState === XMLHttpRequest.DONE){
+    //         if(xhr.status === 200){
+    //             let data = xhr.response;
+
+    //             if(data != "Error" && data != ""){
+    //                 data = data.split(',');
+    //                     data.forEach(element => {
+    //                         let tmp = element.split(':');
+    //                         const newDiv = document.createElement("div");
+    //                         newDiv.textContent = tmp[1];
+    //                         if (tmp[0] == MainTitle.textContent) {
+    //                             newDiv.classList.add("MyMsg");
+    //                         } else {
+    //                             newDiv.classList.add("OtherMsg");
+    //                         }
+    //                         document.getElementById("MsgContainer").appendChild(newDiv);
+    //                     });
+    //             }
+    //         }
+    //     }
+    // }
+    // var data = JSON.stringify({othername: thisdiv.textContent , username: MainTitle.textContent});
+    // xhr.send(data);
+}
+
+// LSB CONTENT SHIFTER \\
+
+msgBtn.onclick = () =>{
+    addCol.style.display = "none";
+    friendCol.style.display = "none";
+    msgCol.style.display = "block";
+    LSBContentTitle.innerHTML = "Online";
+}
+
+addBtn.onclick = () =>{
+    friendCol.style.display = "none";
+    msgCol.style.display = "none";
+    addCol.style.display = "block";
+    LSBContentTitle.innerHTML = "Add";
+}
+
+friendBtn.onclick = () =>{
+    addCol.style.display = "none";
+    msgCol.style.display = "none";
+    friendCol.style.display = "block";
+    LSBContentTitle.innerHTML = "Friends";
+}
+
+
+// ALL USER LOADER \\
+
+setInterval(()=>{
     let xhr = new XMLHttpRequest();
-    xhr.open("POST","backend/msg.php",true);
+    xhr.open("POST","backend/userList.php",true);
     xhr.onload = () =>{
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
                 let data = xhr.response;
-                
-                if(data != "Error"){
-                    data = data.split(',');
-                        data.forEach(element => {
-                            let tmp = element.split(':');
+                msgCol.innerHTML = data;
+                }
+            }
+        }
+    var data = JSON.stringify({username: MainTitle.textContent});
+    xhr.send(data);
+},2000)
+
+setInterval(()=>{
+    if(OTHERNAME != ""){
+    let xhr = new XMLHttpRequest();
+        xhr.open("POST","backend/msg.php",true);
+        xhr.onload = () =>{
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    let data = xhr.response;
+                    if(data != "Error" && data != ""){
+                        data = data.split(',');
+                            for(let i = MsgContainer.children.length ; i<data.length ; i++){
+                            let tmp = data[i].split('@$:$@');
                             const newDiv = document.createElement("div");
                             newDiv.textContent = tmp[1];
                             if (tmp[0] == MainTitle.textContent) {
@@ -60,65 +136,60 @@ function LoadChats(thisdiv) {
                                 newDiv.classList.add("OtherMsg");
                             }
                             document.getElementById("MsgContainer").appendChild(newDiv);
-                        });
+                        }
+                            
+                    }
                 }
             }
         }
+        var data = JSON.stringify({othername: OTHERNAME , username: MainTitle.textContent});
+        xhr.send(data);
     }
-    var data = JSON.stringify({othername: thisdiv.textContent , username: MainTitle.textContent});
-    xhr.send(data);
-}
-
-msgBtn.onclick = () =>{
-    addCol.style.display = "none";
-    friendCol.style.display = "none";
-    msgCol.style.display = "block";
-
-}
-
-addBtn.onclick = () =>{
-    addCol.style.display = "block";
-    friendCol.style.display = "none";
-    addCol.style.display = "none";
-
-}
-
-friendBtn.onclick = () =>{
-    addCol.style.display = "none";
-    friendCol.style.display = "block";
-    msgCol.style.display = "none";
-
-}
-
+},500)
 
 // MESSAGE SEND LOGIC \\
 function SendMsg() {
     let msgText = MsgInputBox.value
     if(msgText == "")
         return
-    if(lnkcheck(msgText)){
-        const link = document.createElement("a")
-        link.textContent = msgText
-        link.href = msgText
-        link.classList.add("MyMsg")
-        document.getElementById("MsgContainer").appendChild(link);
-        MsgContainer.scrollTop = MsgContainer.scrollHeight;
-    }
-    else{
-        const newDiv = document.createElement("div");
-        let tmpTxt = ""
-        msgText = msgText.trim();
-        for (let i = 0; i < msgText.length; i++) {
-            if(msgText[i] == " ")
-                tmpTxt += "&nbsp;"
-            else            
-                tmpTxt += msgText[i]
+    // if(lnkcheck(msgText)){
+    //     const link = document.createElement("a")
+    //     link.textContent = msgText
+    //     link.href = msgText
+    //     link.classList.add("MyMsg")
+    //     document.getElementById("MsgContainer").appendChild(link);
+    //     MsgContainer.scrollTop = MsgContainer.scrollHeight;
+    // }
+    // else{
+    //     const newDiv = document.createElement("div");
+    //     let tmpTxt = ""
+    //     msgText = msgText.trim();
+    //     for (let i = 0; i < msgText.length; i++) {
+    //         if(msgText[i] == " ")
+    //             tmpTxt += "&nbsp;"
+    //         else            
+    //             tmpTxt += msgText[i]
+    //     }
+    //     newDiv.innerHTML = tmpTxt;
+    //     newDiv.classList.add("MyMsg");
+    //     document.getElementById("MsgContainer").appendChild(newDiv);
+    //     MsgContainer.scrollTop = MsgContainer.scrollHeight;
+    // }
+    
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST","backend/send.php",true);
+    xhr.onload = () =>{
+        if(xhr.readyState === XMLHttpRequest.DONE){
+            if(xhr.status === 200){
+                let data = xhr.response;
+                    console.log(data);
+                }
+            }
         }
-        newDiv.innerHTML = tmpTxt;
-        newDiv.classList.add("MyMsg");
-        document.getElementById("MsgContainer").appendChild(newDiv);
-        MsgContainer.scrollTop = MsgContainer.scrollHeight;
-    }
+    var data = JSON.stringify({othername: OTHERNAME , username: MainTitle.textContent, text: MsgInputBox.value});
+    xhr.send(data);
+
     MsgInputBox.value = "";
 }
 

@@ -24,14 +24,18 @@
                 <h1 id="MainTitle"><?php echo"{$_SESSION['user_id']}" ?></h1>
             </div>
             <div class="NamesBox">
-                <div class='LSBContent' style="padding: 0; justify-content:space-around;">
+                <div class='LSBContent nohover' style="padding: 0; justify-content:space-around;">
                     <div class="LSBContentItemBox" id="addBtn"><img src="Imgs/add.png" alt="add"  class='LSBContentItem'></div>
                     <div class="LSBContentItemBox" id="friendsBtn"><img src="Imgs/friends.png" alt="friends"  class='LSBContentItem'></div>
                     <div class="LSBContentItemBox" id="msgBtn"><img src="Imgs/msg.png" alt="messages"  class='LSBContentItem'></div>
                 </div>
 
-                <div id="msg">
+                <div class='LSBContent nohover2' id="LSBContentTitle">
+                    Online
+                </div>
 
+                <div id="msg">
+                    <div class=LSBGeneral> ...Loading</div>
                 </div>
 
                 <div id="friends" style="display: none;">
@@ -40,8 +44,8 @@
                     ?>
                 </div>
 
-                <div id="add">
-
+                <div id="add" style="display: none;">
+                    <div class=LSBGeneral> Work in Progress </div>
                 </div>
                 
                 

@@ -7,6 +7,9 @@ const signupSwitchBtn = document.getElementById("signupSwitchBtn");
 const loginBtn = document.getElementById("loginBtn");
 const signupBtn = document.getElementById("signupBtn");
 
+const popup1 = document.getElementById("popup1");
+const popup2 = document.getElementById("popup2");
+
 loginfrm.onsubmit = (e) =>{
     e.preventDefault();
 }
@@ -40,6 +43,15 @@ signupBtn.onclick = () =>{
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
                 let data = xhr.response;
+                if(data != "Created"){
+                    popup2.style.display = 'flex';
+                    popup2.innerHTML = data;
+                }
+                else{
+                    popup2.style.display = 'flex';
+                    popup2.innerHTML = "User " + data;
+                    popup2.style.background = "#08ff00e3";
+                }
                 console.log(data);
             }
         }
@@ -61,4 +73,8 @@ signupSwitchBtn.onclick = () =>{
     loginfrm.style.display = "none";
     loginSwitchBtn.style.color = "White";
     signupSwitchBtn.style.color = "Lime";
+}
+
+function hidePopup(){
+    document.getElementById('popupOverlay').style.display = 'none';
 }

@@ -15,7 +15,8 @@
     }
 
     if(mysqli_num_rows($result) == 0){
-        echo"Error";                        // ADD automatic Chat database creation as existing not found;
+        echo"Error";
+        mysqli_query($conn,"INSERT INTO chats VALUES('{$data["username"]}/{$data["othername"]}','') ");
     }
     else{
         $chatdata = mysqli_fetch_array($result)['chatdata'];

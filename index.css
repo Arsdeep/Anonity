@@ -145,6 +145,22 @@ body {
     background-color: rgb(70, 70, 80);
 }
 
+.nohover{
+    background-color: rgb(70, 70, 80);
+}
+
+.nohover:hover{
+    background-color: rgb(70, 70, 80);
+}
+
+.nohover2{
+    background-color: rgb(60, 60, 70);
+}
+
+.nohover2:hover{
+    background-color: rgb(60, 60, 70);
+}
+
 .MyMsg {
     padding: 0.5rem 1rem;
     color: black;
