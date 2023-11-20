@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1 id="MainTitle">Anonity</h1>
+        <div class="LSBtn">
+            <h2 id="loginSwitchBtn">Login</h2>
+            <h1>|</h1>
+            <h2 id="signupSwitchBtn">Sign up</h2>
+        </div>
+
+        <form id="login-form" class="main-form" action="#" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" >
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" >
+            </div>
+            <div class="form-group">
+                <button type="submit" id="loginBtn">Login</button>
+            </div>
+        </form>
+
+        <form id="signup-form" class="main-form" action="#" method="post">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" >
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" >
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" >
+            </div>
+            <div class="form-group">
+                <button type="submit" id="signupBtn">Sign Up</button>
+            </div>
+        </form>
+
+        <script src="login.js"></script>
+    </div>
+</body>
+</html>
