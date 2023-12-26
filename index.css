@@ -13,7 +13,7 @@
 * {
     padding: 0;
     margin: 0;
-    background-color: red;
+    /* background-color: red; */
     /* border: 1PX solid white; */
     box-sizing: border-box;
     font-family: "Poppins";
@@ -84,12 +84,11 @@ body {
     flex-direction: column;
 }
 
-.NamesBox {
+.NamesBox { 
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
     overflow-x: hidden;
-    direction: rtl;
     height: 90vh;
     width: 20vw;
     background-color: rgb(10, 10, 15);
@@ -318,6 +317,38 @@ body {
 .Emoji h1::selection {
     background-color: transparent;
 }
+
+#addFriendFrm{
+    text-decoration: none;
+    text-align: center;
+    font-size: 17px;
+}
+
+#addFriendInput{
+    text-decoration: none;
+    text-align: center;
+    background: lime;
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 17px;
+    padding: 5px;
+}
+
+#addFriendBtn{
+    color: black;
+    background: lime;
+    border: none;
+    width: 90%;
+    border-radius: 5px;
+    font-size: 17px;
+    margin: 5px;
+}
+
+#addFriendBtn:hover{
+    background: rgb(46, 250, 46);
+}
+
 @keyframes slideRtL {
     from {
         transform: translateX(100%);

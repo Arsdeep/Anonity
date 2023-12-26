@@ -3,6 +3,18 @@
     if(!isset($_SESSION['user_id'])){
         header("location: ./login.html");
     }
+    else if(isset($_POST['addFriend'])){
+        include_once "backend/config.php";
+        session_start();
+        $res = mysqli_fetch_array(mysqli_query($conn,"SELECT friends FROM users where username = '{$_SESSION["user_id"]}'"))[0];
+        if($res == ""){
+            $res = $_POST['name'];
+        }else{
+            $res = $res . ",{$_POST['name']}";
+        }
+        mysqli_query($conn,"UPDATE users SET friends = '$res' where username = '{$_SESSION["user_id"]}'");
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -25,17 +37,17 @@
             </div>
             <div class="NamesBox">
                 <div class='LSBContent nohover' style="padding: 0; justify-content:space-around;">
-                    <div class="LSBContentItemBox" id="addBtn"><img src="Imgs/add.png" alt="add"  class='LSBContentItem'></div>
-                    <div class="LSBContentItemBox" id="friendsBtn"><img src="Imgs/friends.png" alt="friends"  class='LSBContentItem'></div>
                     <div class="LSBContentItemBox" id="msgBtn"><img src="Imgs/msg.png" alt="messages"  class='LSBContentItem'></div>
+                    <div class="LSBContentItemBox" id="friendsBtn"><img src="Imgs/friends.png" alt="friends"  class='LSBContentItem'></div>
+                    <div class="LSBContentItemBox" id="addBtn"><img src="Imgs/add.png" alt="add"  class='LSBContentItem'></div>
                 </div>
 
                 <div class='LSBContent nohover2' id="LSBContentTitle">
-                    Online
+                    Global List
                 </div>
 
                 <div id="msg">
-                    <div class=LSBGeneral> ...Loading</div>
+                    <div class=LSBGeneral>Loading...</div>
                 </div>
 
                 <div id="friends" style="display: none;">
@@ -45,7 +57,11 @@
                 </div>
 
                 <div id="add" style="display: none;">
-                    <div class=LSBGeneral> Work in Progress </div>
+                    <form action="index.php" method="post" id="addFriendFrm">
+                        <label for="name">Add Friend:</label>
+                        <input type="text" name="name" id="addFriendInput">
+                        <input type="submit" name="addFriend" value="add" id="addFriendBtn">
+                    </form>
                 </div>
                 
                 
@@ -65,7 +81,7 @@
             </div>
 
             <div class="Message">
-                <div class="Plus"></div>
+                <div class="Plus" style="display: none;"></div>
                 <div class="Emoji" onclick="EmojiDivDisplay()">
                     <div id="EmojiBox" style="display: none;">
                         

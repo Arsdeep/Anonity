@@ -45,34 +45,6 @@ function LoadChats(thisdiv) {
     ProfileImg.style.display = "block";                 // Implement PFP here
     
     OTHERNAME = thisdiv.textContent;
-
-
-    // let xhr = new XMLHttpRequest();
-    // xhr.open("POST","backend/msg.php",true);
-    // xhr.onload = () =>{
-    //     if(xhr.readyState === XMLHttpRequest.DONE){
-    //         if(xhr.status === 200){
-    //             let data = xhr.response;
-
-    //             if(data != "Error" && data != ""){
-    //                 data = data.split(',');
-    //                     data.forEach(element => {
-    //                         let tmp = element.split(':');
-    //                         const newDiv = document.createElement("div");
-    //                         newDiv.textContent = tmp[1];
-    //                         if (tmp[0] == MainTitle.textContent) {
-    //                             newDiv.classList.add("MyMsg");
-    //                         } else {
-    //                             newDiv.classList.add("OtherMsg");
-    //                         }
-    //                         document.getElementById("MsgContainer").appendChild(newDiv);
-    //                     });
-    //             }
-    //         }
-    //     }
-    // }
-    // var data = JSON.stringify({othername: thisdiv.textContent , username: MainTitle.textContent});
-    // xhr.send(data);
 }
 
 // LSB CONTENT SHIFTER \\
@@ -81,7 +53,7 @@ msgBtn.onclick = () =>{
     addCol.style.display = "none";
     friendCol.style.display = "none";
     msgCol.style.display = "block";
-    LSBContentTitle.innerHTML = "Online";
+    LSBContentTitle.innerHTML = "Global List";
 }
 
 addBtn.onclick = () =>{
@@ -152,30 +124,6 @@ function SendMsg() {
     let msgText = MsgInputBox.value
     if(msgText == "")
         return
-    // if(lnkcheck(msgText)){
-    //     const link = document.createElement("a")
-    //     link.textContent = msgText
-    //     link.href = msgText
-    //     link.classList.add("MyMsg")
-    //     document.getElementById("MsgContainer").appendChild(link);
-    //     MsgContainer.scrollTop = MsgContainer.scrollHeight;
-    // }
-    // else{
-    //     const newDiv = document.createElement("div");
-    //     let tmpTxt = ""
-    //     msgText = msgText.trim();
-    //     for (let i = 0; i < msgText.length; i++) {
-    //         if(msgText[i] == " ")
-    //             tmpTxt += "&nbsp;"
-    //         else            
-    //             tmpTxt += msgText[i]
-    //     }
-    //     newDiv.innerHTML = tmpTxt;
-    //     newDiv.classList.add("MyMsg");
-    //     document.getElementById("MsgContainer").appendChild(newDiv);
-    //     MsgContainer.scrollTop = MsgContainer.scrollHeight;
-    // }
-    
 
     let xhr = new XMLHttpRequest();
     xhr.open("POST","backend/send.php",true);

@@ -1,7 +1,7 @@
 <?php
     include_once "config.php";
 
-    $query = "SELECT username FROM users";
+    $query = "SELECT username FROM users ORDER BY username ASC";
     
     $res =mysqli_query($conn,$query);
 

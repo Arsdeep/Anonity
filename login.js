@@ -28,9 +28,11 @@ loginBtn.onclick = () =>{
                 console.log(data);
                 if(data == "Successful Login"){
                     location.href = "index.php";
+                }else if(data == "admin login"){
+                    location.href = "admin.php";
                 }
             }
-        }
+        }   
     }
     let formData = new FormData(loginfrm);
     xhr.send(formData);

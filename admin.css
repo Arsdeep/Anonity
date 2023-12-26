@@ -1,0 +1,100 @@
+@font-face {
+    font-family: "Future";
+    src: url("Fonts/FutureF.woff2") format("woff2"),
+        /* Super Modern Browsers */ url("Fonts/FutureF.woff") format("woff"),
+        /* Pretty Modern Browsers */ url("Fonts/FutureF.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Fonts/Poppins-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(1, 2, 10);
+    margin: 20px;
+}
+
+h2 {
+    font-family: "Future";
+    background: rgb(16, 231, 154);
+    background: -moz-linear-gradient(
+        90deg,
+        rgba(16, 231, 154, 1) 0%,
+        rgba(33, 215, 11, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+        90deg,
+        rgba(16, 231, 154, 1) 0%,
+        rgba(33, 215, 11, 1) 100%
+    );
+    background: linear-gradient(
+        90deg,
+        rgba(16, 231, 154, 1) 0%,
+        rgba(33, 215, 11, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#10e79a",endColorstr="#21d70b",GradientType=1);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: xx-large;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td{
+    color: white;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: lime;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(59, 255, 59);
+}
+
+form {
+    max-width: 90vw;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid lime;
+    border-radius: 5px;
+}
+
+label {
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+}
