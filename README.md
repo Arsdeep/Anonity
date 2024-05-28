@@ -99,7 +99,7 @@ e for more details.
 
 ## Support
 
-If you encounter any issues or have questions, feel free to open an issue on the [GitHub repository](https://github.com/yourusername/anonity/issues) or contact us directly.
+If you encounter any issues or have questions, feel free to open an issue on this github repository or contact us directly.
 
 ---
 
